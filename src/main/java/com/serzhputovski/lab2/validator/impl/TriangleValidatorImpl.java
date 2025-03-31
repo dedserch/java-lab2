@@ -14,12 +14,14 @@ public class TriangleValidatorImpl implements TriangleValidator {
                 (triangle.getA() + triangle.getB() > triangle.getC()) &&
                 (triangle.getA() + triangle.getC() > triangle.getB()) &&
                 (triangle.getB() + triangle.getC() > triangle.getA());
-        if(!valid) {
+
+        if (valid) {
+            logger.info("Triangle is valid");
+        } else {
             logger.error("Triangle is not valid");
         }
-        else {
-            logger.info("Triangle is valid");
-        }
+
         return valid;
     }
+
 }
