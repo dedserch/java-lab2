@@ -2,6 +2,7 @@ package com.serzhputovski.lab2.service.impl;
 
 import com.serzhputovski.lab2.creator.TriangleFactory;
 import com.serzhputovski.lab2.entity.Triangle;
+import com.serzhputovski.lab2.exception.TriangleArithmeticException;
 import com.serzhputovski.lab2.service.TriangleArithmeticService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -45,7 +46,7 @@ public class TriangleArithmeticServiceImpl implements TriangleArithmeticService 
     public Triangle divide(Triangle t, int divisor) {
         if(divisor == 0) {
             logger.error("Division by zero attempted on triangle: " + t);
-            throw new IllegalArgumentException("Divisor cannot be zero");
+            throw new TriangleArithmeticException("Divisor cannot be zero");
         }
         int a = t.getA() / divisor;
         int b = t.getB() / divisor;
