@@ -4,8 +4,8 @@ import com.serzhputovski.lab2.entity.Triangle;
 
 public interface TriangleService {
 
-    public double calculateArea(Triangle triangle);
+    double calculateArea(Triangle triangle);
 
-    public double calculatePerimeter(Triangle triangle);
+    double calculatePerimeter(Triangle triangle);
 
 }

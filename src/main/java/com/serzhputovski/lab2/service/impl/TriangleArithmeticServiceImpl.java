@@ -9,11 +9,6 @@ import org.apache.logging.log4j.Logger;
 
 public class TriangleArithmeticServiceImpl implements TriangleArithmeticService {
     private static final Logger logger = LogManager.getLogger(TriangleArithmeticServiceImpl.class);
-    private final TriangleFactory triangleFactory;
-
-    public TriangleArithmeticServiceImpl(TriangleFactory triangleFactory) {
-        this.triangleFactory = triangleFactory;
-    }
 
     @Override
     public Triangle add(Triangle t1, Triangle t2) {
@@ -21,7 +16,7 @@ public class TriangleArithmeticServiceImpl implements TriangleArithmeticService 
         int b = t1.getB() + t2.getB();
         int c = t1.getC() + t2.getC();
         logger.info("Adding triangles: " + t1 + " + " + t2);
-        return triangleFactory.createTriangle(a, b, c);
+        return new Triangle(a, b, c);
     }
 
     @Override
@@ -30,7 +25,7 @@ public class TriangleArithmeticServiceImpl implements TriangleArithmeticService 
         int b = Math.abs(t1.getB() - t2.getB());
         int c = Math.abs(t1.getC() - t2.getC());
         logger.info("Subtracting triangles: " + t1 + " - " + t2);
-        return triangleFactory.createTriangle(a, b, c);
+        return new Triangle(a, b, c);
     }
 
     @Override
@@ -39,7 +34,7 @@ public class TriangleArithmeticServiceImpl implements TriangleArithmeticService 
         int b = t.getB() * factor;
         int c = t.getC() * factor;
         logger.info("Multiplying triangle: " + t + " * " + factor);
-        return triangleFactory.createTriangle(a, b, c);
+        return new Triangle(a, b, c);
     }
 
     @Override
@@ -52,6 +47,6 @@ public class TriangleArithmeticServiceImpl implements TriangleArithmeticService 
         int b = t.getB() / divisor;
         int c = t.getC() / divisor;
         logger.info("Dividing triangle: " + t + " / " + divisor);
-        return triangleFactory.createTriangle(a, b, c);
+        return new Triangle(a, b, c);
     }
 }

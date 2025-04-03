@@ -11,13 +11,13 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class TriangleArithmeticServiceTest {
-    private TriangleArithmeticService arithmeticService;
-    private TriangleFactory triangleFactory;
+    private static TriangleArithmeticService arithmeticService;
+    private static TriangleFactory triangleFactory;
 
     @BeforeMethod
     public void setUp() {
         triangleFactory = new TriangleFactoryImpl();
-        arithmeticService = new TriangleArithmeticServiceImpl(triangleFactory);
+        arithmeticService = new TriangleArithmeticServiceImpl();
     }
 
     @Test

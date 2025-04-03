@@ -10,10 +10,10 @@ import org.apache.logging.log4j.Logger;
 
 public class TriangleFactoryImpl implements TriangleFactory {
     private static final Logger logger = LogManager.getLogger(TriangleFactoryImpl.class);
-    private final TriangleValidator triangleValidator = new TriangleValidatorImpl();
+    private static final TriangleValidator triangleValidator = new TriangleValidatorImpl();
 
     @Override
-    public Triangle createTriangle(int a , int b , int c) {
+    public Triangle createTriangle(int a , int b , int c) throws InvalidTriangleException{
         logger.info("Creating Triangle");
 
         Triangle triangle = new Triangle(a, b, c);

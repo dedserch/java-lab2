@@ -1,6 +1,6 @@
 package com.serzhputovski.lab2.exception;
 
-public class TriangleArithmeticException extends RuntimeException {
+public class TriangleArithmeticException extends Exception {
     public TriangleArithmeticException(String message) {
         super(message);
     }

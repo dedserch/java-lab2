@@ -18,7 +18,7 @@ public class TriangleParserImpl implements TriangleParser {
 
     @Override
     public Optional<Triangle> parse(String line) {
-        if(line == null || line.trim().isEmpty()){
+        if(line == null || line.isBlank()){
             logger.error("Empty or null line encountered.");
             return Optional.empty();
         }
