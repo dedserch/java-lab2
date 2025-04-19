@@ -5,5 +5,5 @@ import com.serzhputovski.lab2.entity.Triangle;
 import java.util.Optional;
 
 public interface TriangleParser {
-    Optional<Triangle> parse(String input);
+    Optional<int[]> parse(String line);
 }
